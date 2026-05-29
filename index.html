@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhysioXtra — South Australia's Premier Physiotherapy</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════════════════ -->
+<nav id="nav" class="transparent">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div>
+        <span class="nav-logo-text">Physio<span>Xtra</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="booking.html" class="btn btn-primary">Book Now</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-drawer">
+  <div class="drawer-panel">
+    <a href="services.html"  onclick="closeDrawer()">Services</a>
+    <a href="locations.html" onclick="closeDrawer()">Locations</a>
+    <a href="about.html"     onclick="closeDrawer()">About</a>
+    <a href="contact.html"   onclick="closeDrawer()">Contact</a>
+    <a href="booking.html"   class="drawer-book" onclick="closeDrawer()">Book Appointment</a>
+  </div>
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+</div>
+<div id="mobile-book-bar">
+  <a href="booking.html" class="btn btn-primary btn-sm">Book Appointment</a>
+  <a href="tel:0883574988" class="mbb-call"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call</a>
+</div>
+
+<!-- ═══════════════════════════ HERO ══════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="tag tag-light">South Australia's Premier Physiotherapy</span>
+      <h1 class="hero-headline">Expert care.<br/><em>Lasting results.</em></h1>
+      <p class="hero-sub">Bringing elite-level physiotherapy to everyone since 1996. Six clinics across Adelaide and Victor Harbor — same-day appointments available.</p>
+      <div class="hero-actions">
+        <a href="booking.html" class="btn btn-primary">Book Same-Day Appointment <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+        <a href="services.html" class="btn btn-outline">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">30<span>+</span></div><div class="hero-stat-label">Years of expertise</div></div>
+        <div><div class="hero-stat-num">6</div><div class="hero-stat-label">Clinic locations</div></div>
+        <div><div class="hero-stat-num">12<span>+</span></div><div class="hero-stat-label">Specialist services</div></div>
+        <div><div class="hero-stat-num">90<span>%</span></div><div class="hero-stat-label">Recommendation rate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TRUST BAR ════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Same-day appointments</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Evidence-based treatment</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Lokomat robotic rehab</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>NDIS &amp; private health accepted</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>DVA &amp; Medicare care plans</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Founded 1996 · 30 years trusted</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SERVICES ═════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="tag">What We Offer</span>
+      <h2 class="section-heading">A complete spectrum<br/>of allied health care</h2>
+      <p class="section-sub">From acute injury management to long-term neurological rehabilitation — our multidisciplinary team has the depth to treat any condition.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card featured fade-up">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div>
+        <div class="svc-name">Physiotherapy</div>
+        <div class="svc-desc">Hands-on treatment combining joint mobilisation, soft tissue work, dry needling, and personalised rehab programs. Same-day bookings.</div>
+        <a href="services.html" class="svc-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up delay-1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg></div>
+        <div class="svc-name">Clinical Pilates</div>
+        <div class="svc-desc">Physiotherapist-led exercise classes to improve strength, range of motion, and reduce injury risk — for all fitness levels.</div>
+        <a href="services.html" class="svc-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up delay-2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21 6.5C21 4.01 18.99 2 16.5 2h-9C5.01 2 3 4.01 3 6.5v11C3 19.99 5.01 22 7.5 22h9c2.49 0 4.5-2.01 4.5-4.5v-11zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+        <div class="svc-name">Hydrotherapy</div>
+        <div class="svc-desc">30°C therapeutic pool with underwater treadmill and resistance jets. Low-impact rehabilitation guided by specialist physiotherapists.</div>
+        <a href="services.html" class="svc-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up delay-3">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+        <div class="svc-name">GLA:D Program</div>
+        <div class="svc-desc">Internationally validated treatment for hip &amp; knee osteoarthritis. Small groups screened and tracked for measurable outcomes.</div>
+        <a href="services.html" class="svc-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up delay-1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-2 .9-2 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+        <div class="svc-name">Podiatry</div>
+        <div class="svc-desc">Assessment and treatment of foot, ankle, and lower limb conditions. Custom orthotics and biomechanical analysis.</div>
+        <a href="services.html" class="svc-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up delay-2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></div>
+        <div class="svc-name">RecoverX Centre</div>
+        <div class="svc-desc">Dedicated recovery hub blending professional sports technology with physiotherapy-guided programming for accelerated rehab.</div>
+        <a href="services.html" class="svc-link">Learn more →</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="services.html" class="btn btn-outline-dark">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TECH ══════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="fade-up" style="max-width:580px">
+      <span class="tag">Rehabilitation Technology</span>
+      <h2 class="section-heading" style="margin-top:14px">Hospital-grade tech.<br/>Private clinic access.</h2>
+      <p class="section-sub" style="margin-top:12px">We invest in the same equipment used in leading rehab hospitals — so you get specialist-grade outcomes without the waiting list.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card fade-up delay-1">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80&auto=format&fit=crop" alt="Lokomat robotic rehabilitation" loading="lazy"/>
+        <div class="tech-card-overlay">
+          <div class="tech-badge">Norwood &amp; Marion</div>
+          <div class="tech-card-title">Lokomat Robotic Gait Training</div>
+          <div class="tech-card-desc">Precise, repetitive gait retraining for stroke, MS, cerebral palsy, spinal cord injury, and TBI.</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div class="tech-card fade-up delay-2" style="min-height:160px">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&q=80&auto=format&fit=crop" alt="Hydrotherapy pool" loading="lazy"/>
+          <div class="tech-card-overlay">
+            <div class="tech-badge">Select Clinics</div>
+            <div class="tech-card-title">Hydrotherapy Pool</div>
+            <div class="tech-card-desc">30°C therapeutic pool with underwater treadmill &amp; resistance jets.</div>
+          </div>
+        </div>
+        <div class="tech-card fade-up delay-3" style="min-height:160px">
+          <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=80&auto=format&fit=crop" alt="ArmeoSpring upper limb rehab" loading="lazy"/>
+          <div class="tech-card-overlay">
+            <div class="tech-badge">Norwood</div>
+            <div class="tech-card-title">ArmeoSpring Upper Limb Rehab</div>
+            <div class="tech-card-desc">Gaming-based robotic tech to restore upper limb function post-stroke or neurological injury.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ABOUT ═════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-stack fade-up">
+        <div class="about-badge"><div class="about-badge-num">30+</div><div class="about-badge-text">Years caring for SA</div></div>
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop" alt="PhysioXtra physiotherapist" loading="lazy"/>
+        <img class="about-img-accent" src="https://images.unsplash.com/photo-1517120026326-d87759a7b63b?w=400&q=80&auto=format&fit=crop" alt="PhysioXtra clinic" loading="lazy"/>
+      </div>
+      <div class="about-content fade-up delay-2">
+        <div>
+          <span class="tag">Our Story</span>
+          <h2 class="section-heading" style="margin-top:14px">Built on care.<br/>Driven by results.</h2>
+        </div>
+        <p class="section-sub">Founded in 1996 by Kath Chigwidden with a singular vision — to make elite physiotherapy accessible to every South Australian. Three decades on, that mission remains the heartbeat of everything we do.</p>
+        <div class="about-feature">
+          <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div><div class="about-feature-title">Evidence-based practice</div><div class="about-feature-desc">Every protocol grounded in current clinical research, continuously refined as the evidence evolves.</div></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05C16.19 13.9 17 15.02 17 16.5V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <div><div class="about-feature-title">Multidisciplinary team</div><div class="about-feature-desc">Physios, podiatrists, dietitians, and massage therapists collaborating around your care plan.</div></div>
+        </div>
+        <a href="about.html" class="btn btn-outline-dark" style="width:fit-content">Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TESTIMONIALS ══════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center fade-up">
+      <span class="tag">Patient Reviews</span>
+      <h2 class="section-heading">Trusted by South Australians</h2>
+      <p class="section-sub">Real words from real patients who've returned to doing what they love.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up"><div class="stars"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="testimonial-text">"The professionalism and care is second to none. I was back running in half the time I expected."</p><div class="testimonial-author"><div class="testimonial-avatar">S</div><div><div class="testimonial-name">Sarah M.</div><div class="testimonial-clinic">PhysioXtra Marion</div></div></div></div>
+      <div class="testimonial-card fade-up delay-1"><div class="stars"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="testimonial-text">"The Lokomat program at Norwood has been a game-changer for my recovery after my stroke. I can't thank the team enough."</p><div class="testimonial-author"><div class="testimonial-avatar">D</div><div><div class="testimonial-name">David R.</div><div class="testimonial-clinic">PhysioXtra Norwood</div></div></div></div>
+      <div class="testimonial-card fade-up delay-2"><div class="stars"><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div><p class="testimonial-text">"The GLA:D program changed how I manage my knee arthritis. Less pain in 3 months than the previous 3 years."</p><div class="testimonial-author"><div class="testimonial-avatar">L</div><div><div class="testimonial-name">Lynette P.</div><div class="testimonial-clinic">PhysioXtra Pirie Street</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CTA ═══════════════════════════════════════ -->
+<div class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="tag tag-light">Get Started Today</span>
+      <h2 class="cta-heading">Ready to move better<br/>and feel stronger?</h2>
+      <p class="cta-sub">Same-day appointments across six SA clinics. Private health, NDIS, DVA &amp; Medicare accepted.</p>
+      <div class="cta-actions">
+        <a href="booking.html" class="btn btn-white">Book Online <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+        <a href="tel:0883574988" class="btn btn-outline">Call (08) 8357 4988</a>
+      </div>
+      <p class="cta-note">Or email <a href="mailto:marion@physioxtra.com">marion@physioxtra.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div><span class="footer-logo-text">Physio<span>Xtra</span></span></div>
+          <p class="footer-tagline">Bringing elite physiotherapy to every South Australian since 1996.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="rgba(255,255,255,.7)"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services.html">Physiotherapy</a><a href="services.html">Clinical Pilates</a><a href="services.html">GLA:D Program</a>
+            <a href="services.html">Hydrotherapy</a><a href="services.html">Lokomat Rehab</a><a href="services.html">Podiatry</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a><a href="about.html">Our Team</a><a href="locations.html">Locations</a>
+            <a href="contact.html">Contact</a><a href="contact.html">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Get in Touch</div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg><span>(08) 8357 4988</span></div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>marion@physioxtra.com</span></div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>724 Marion Road, Marion SA 5043</span></div>
+          <a href="booking.html" class="btn btn-primary btn-sm" style="margin-top:14px">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PhysioXtra. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+<script src="js/main.js"></script>
+</body>
+</html>

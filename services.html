@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — PhysioXtra</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div><span class="nav-logo-text">Physio<span>Xtra</span></span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a><a href="locations.html">Locations</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="booking.html" class="btn btn-primary">Book Now</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer">
+  <div class="drawer-panel">
+    <a href="services.html" onclick="closeDrawer()">Services</a><a href="locations.html" onclick="closeDrawer()">Locations</a>
+    <a href="about.html" onclick="closeDrawer()">About</a><a href="contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="booking.html" class="drawer-book" onclick="closeDrawer()">Book Appointment</a>
+  </div>
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+</div>
+<div id="mobile-book-bar">
+  <a href="booking.html" class="btn btn-primary btn-sm">Book Appointment</a>
+  <a href="tel:0883574988" class="mbb-call"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg>Call</a>
+</div>
+
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80&auto=format&fit=crop')">
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="tag tag-light">Our Services</span>
+      <h1 class="page-hero-title">A complete spectrum<br/>of allied health</h1>
+      <p class="page-hero-sub">Twelve specialist services under one roof — from physiotherapy and Lokomat robotics to hydrotherapy and clinical nutrition.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all" onclick="filterServices('all', this)">All Services</button>
+      <button class="filter-tab" data-filter="physio" onclick="filterServices('physio', this)">Physiotherapy</button>
+      <button class="filter-tab" data-filter="rehab" onclick="filterServices('rehab', this)">Rehabilitation</button>
+      <button class="filter-tab" data-filter="specialist" onclick="filterServices('specialist', this)">Specialist</button>
+      <button class="filter-tab" data-filter="wellness" onclick="filterServices('wellness', this)">Wellness</button>
+    </div>
+
+    <div class="svc-full-grid" id="services-grid">
+
+      <!-- Physiotherapy -->
+      <div class="svc-full-card" data-cat="physio">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Physiotherapy</div>
+          <div class="svc-full-desc">Hands-on treatment combining joint mobilisation, soft tissue work, dry needling, and personalised rehabilitation. Same-day appointments available, 30-minute focused sessions.</div>
+          <div class="svc-pills"><span class="svc-pill">30 min</span><span class="svc-pill">Same-day</span><span class="svc-pill">All ages</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('physio')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Pilates -->
+      <div class="svc-full-card" data-cat="physio">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Clinical Pilates &amp; Group Exercise</div>
+          <div class="svc-full-desc">Physiotherapist-led Pilates targeting core strength, flexibility, and injury prevention. Group classes (up to 6 participants) and individual sessions available.</div>
+          <div class="svc-pills"><span class="svc-pill">60 min</span><span class="svc-pill">Group / 1:1</span><span class="svc-pill">All levels</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('pilates')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GLA:D -->
+      <div class="svc-full-card" data-cat="physio specialist">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">GLA:D Program</div>
+          <div class="svc-full-desc">Internationally validated exercise therapy for hip and knee osteoarthritis. Small groups (≈6), screened and measured at start and end to track your progress.</div>
+          <div class="svc-pills"><span class="svc-pill">60 min</span><span class="svc-pill">Small group</span><span class="svc-pill">OA treatment</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('glad')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hydrotherapy -->
+      <div class="svc-full-card" data-cat="rehab">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4.82L21 9l-9-6z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Hydrotherapy</div>
+          <div class="svc-full-desc">State-of-the-art 30°C therapeutic pool with underwater treadmill and resistance jets. Natural buoyancy reduces joint load while physios guide targeted programs.</div>
+          <div class="svc-pills"><span class="svc-pill">45 min</span><span class="svc-pill">Pool-based</span><span class="svc-pill">Low impact</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('hydro')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lokomat -->
+      <div class="svc-full-card" data-cat="rehab specialist">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Lokomat Robotic Gait Training</div>
+          <div class="svc-full-desc">The Hocoma Lokomat provides highly precise repetitive gait retraining. Available at Norwood and Marion. Indicated for stroke, MS, cerebral palsy, TBI, and spinal cord injury.</div>
+          <div class="svc-pills"><span class="svc-pill">Norwood · Marion</span><span class="svc-pill">Neurological</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('lokomat')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ArmeoSpring -->
+      <div class="svc-full-card" data-cat="rehab specialist">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M21 10.5h-1V7c0-1.1-.9-2-2-2h-3V3.5C15 2.12 13.88 1 12.5 1S10 2.12 10 3.5V5H7c-1.1 0-2 .9-2 2v3.5H4c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5h1V19c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.5h1c1.38 0 2.5-1.12 2.5-2.5S22.38 10.5 21 10.5z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">ArmeoSpring Upper Limb Rehab</div>
+          <div class="svc-full-desc">Gaming-based robotic technology that uses engaging exercises to restore upper limb function following stroke or other neurological injuries. Available at Norwood clinic.</div>
+          <div class="svc-pills"><span class="svc-pill">Norwood only</span><span class="svc-pill">Upper limb</span><span class="svc-pill">Neuro</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('armeo')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RecoverX -->
+      <div class="svc-full-card" data-cat="rehab wellness">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C7.81 18 6 15.21 6 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">RecoverX Recovery Centre</div>
+          <div class="svc-full-desc">A dedicated recovery and rehab hub blending professional sports technology with physiotherapy-guided programming. Designed for athletes and anyone pursuing accelerated recovery.</div>
+          <div class="svc-pills"><span class="svc-pill">Recovery</span><span class="svc-pill">Sports</span><span class="svc-pill">Performance</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('recoverx')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Podiatry -->
+      <div class="svc-full-card" data-cat="specialist">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-2 .9-2 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Podiatry</div>
+          <div class="svc-full-desc">Assessment and treatment of foot, ankle, and lower limb conditions. Custom orthotics, biomechanical analysis, sports podiatry, and general foot care.</div>
+          <div class="svc-pills"><span class="svc-pill">30 min</span><span class="svc-pill">Lower limb</span><span class="svc-pill">Orthotics</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('podiatry')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lymphoedema -->
+      <div class="svc-full-card" data-cat="specialist">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zM2 20c0-3.87 3.13-7 7-7h6c3.87 0 7 3.13 7 7v1H2v-1z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Lipoedema &amp; Lymphoedema</div>
+          <div class="svc-full-desc">Specialist physiotherapy for complex lymphatic conditions, delivered by therapists trained in advanced compression and manual lymphatic drainage techniques.</div>
+          <div class="svc-pills"><span class="svc-pill">Specialist</span><span class="svc-pill">Lymphatic</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('lympho')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Remedial Massage -->
+      <div class="svc-full-card" data-cat="wellness">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M21 6.5C21 4.01 18.99 2 16.5 2h-9C5.01 2 3 4.01 3 6.5v11C3 19.99 5.01 22 7.5 22h9c2.49 0 4.5-2.01 4.5-4.5v-11zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Remedial Massage</div>
+          <div class="svc-full-desc">Targeted therapeutic massage for muscle tension, sports recovery, and chronic pain. Delivered as standalone treatment or as a complement to physiotherapy care.</div>
+          <div class="svc-pills"><span class="svc-pill">60 min</span><span class="svc-pill">Therapeutic</span><span class="svc-pill">Sports</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('massage')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dietitian -->
+      <div class="svc-full-card" data-cat="wellness specialist">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">Dietitian</div>
+          <div class="svc-full-desc">Evidence-based nutritional support integrated with your physiotherapy care. Weight management, injury recovery nutrition, chronic disease management, and sports nutrition.</div>
+          <div class="svc-pills"><span class="svc-pill">45 min</span><span class="svc-pill">Nutrition</span><span class="svc-pill">Medicare eligible</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('dietitian')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PilatesX -->
+      <div class="svc-full-card" data-cat="wellness physio">
+        <div class="svc-card-img"><svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg></div>
+        <div class="svc-card-body">
+          <div class="svc-full-name">PilatesX</div>
+          <div class="svc-full-desc">Advanced Pilates programme combining reformer-based exercises with functional training. Designed for those wanting to build on clinical Pilates or seeking performance conditioning.</div>
+          <div class="svc-pills"><span class="svc-pill">60 min</span><span class="svc-pill">Advanced</span><span class="svc-pill">Reformer</span></div>
+          <div class="svc-card-actions">
+            <button class="btn btn-outline-dark btn-sm" onclick="openModal('pilatesx')">View Details</button>
+            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modal-backdrop" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-icon"><svg id="modal-icon-svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-desc" id="modal-desc"></div>
+      <ul class="modal-features" id="modal-features"></ul>
+    </div>
+    <div class="modal-footer">
+      <a href="booking.html" class="btn btn-primary">Book This Service</a>
+      <button class="btn btn-ghost btn-sm" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="container"><div class="cta-inner">
+    <span class="tag tag-light">Ready to start?</span>
+    <h2 class="cta-heading">Book your appointment today</h2>
+    <p class="cta-sub">Same-day bookings available. Private health, NDIS, DVA &amp; Medicare care plans accepted.</p>
+    <div class="cta-actions">
+      <a href="booking.html" class="btn btn-white">Book Online</a>
+      <a href="tel:0883574988" class="btn btn-outline">Call (08) 8357 4988</a>
+    </div>
+  </div></div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom"><span>© 2025 PhysioXtra. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div>
+</footer>
+<button id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+<script src="js/main.js"></script>
+<script>
+const MODALS = {
+  physio:  { title:'Physiotherapy', desc:'Our flagship service combines evidence-based hands-on treatment with personalised rehabilitation programs. Our physiotherapists use a range of techniques to reduce pain, restore function, and prevent recurrence.', features:['Joint mobilisation and manipulation','Soft tissue massage and myofascial release','Dry needling and acupuncture','Exercise prescription and rehabilitation programs','Sports injury assessment and management','Post-surgical rehabilitation'] },
+  pilates: { title:'Clinical Pilates & Group Exercise', desc:'Delivered by qualified physiotherapists, our Clinical Pilates sessions are tailored to your specific needs. All participants are assessed before commencing to ensure the right exercises are prescribed.', features:['Initial physiotherapy assessment included','Small group classes (maximum 6)','Individual attention and program modification','Core strength, flexibility, and balance','Suitable for rehabilitation or fitness','Ongoing programme progression'] },
+  glad:    { title:'GLA:D Program', desc:'Good Life with osteoArthritis in Denmark (GLA:D) is an internationally validated education and supervised exercise programme for people with hip or knee osteoarthritis symptoms.', features:['2 education sessions + 12 supervised exercise sessions','Small groups — approximately 6 participants','Baseline and 3-month outcome measures recorded','Designed to reduce OA symptoms long-term','No surgery required','Clinically proven to reduce pain and improve function'] },
+  hydro:   { title:'Hydrotherapy', desc:'Our state-of-the-art hydrotherapy facility features a 30°C therapeutic pool, underwater treadmill, and resistance jets — all supervised by specialist hydrotherapy physiotherapists.', features:['30°C heated therapeutic pool','Underwater treadmill for gait retraining','Resistance jets for strengthening','Natural buoyancy reduces joint load by up to 80%','Ideal for arthritis, post-surgery, and neurological conditions','Swimwear and towel hire available'] },
+  lokomat: { title:'Lokomat Robotic Gait Training', desc:'The Hocoma Lokomat is a world-leading robotic exoskeleton that provides highly precise, repetitive gait training. Available at our Norwood and Marion clinics — making it one of the most accessible in South Australia.', features:['Robotic exoskeleton with body weight support','Highly repeatable gait cycle retraining','Real-time biofeedback displayed on screen','Indicated for stroke, MS, CP, TBI, spinal cord injury','Available at Norwood and Marion clinics','Referral from treating physician or physio required'] },
+  armeo:   { title:'ArmeoSpring Upper Limb Rehab', desc:'The Hocoma ArmeoSpring uses gaming technology and a spring-loaded arm support to encourage repetitive task practice for upper limb recovery after neurological injury.', features:['3D arm movement training in a gaming environment','Spring-assisted support reduces effort threshold','Tracks movement quality and range in real time','Suitable for stroke, TBI, and other neurological conditions','Available at our Norwood clinic','Combined with conventional physiotherapy for best outcomes'] },
+  recoverx:{ title:'RecoverX Recovery Centre', desc:'A dedicated recovery hub combining professional sports technology with physiotherapy-guided programming. Designed to accelerate recovery between sessions, reduce injury risk, and support peak performance.', features:['Compression therapy (NormaTec)','Ice bath and contrast therapy','Recovery-focused strength and conditioning','Suitable for athletes and active individuals','Guided by physiotherapists and sports science staff','Membership and casual visit options available'] },
+  podiatry:{ title:'Podiatry', desc:'Our qualified podiatrists assess and treat a wide range of foot, ankle, and lower limb conditions — from everyday foot care to complex biomechanical problems and sporting injuries.', features:['Biomechanical assessment and gait analysis','Custom foot orthotics design and fitting','Ingrown toenail treatment','Heel pain, plantar fasciitis, and Achilles conditions','Diabetic foot assessment','Sports podiatry and footwear advice'] },
+  lympho:  { title:'Lipoedema & Lymphoedema Physiotherapy', desc:'Our specialist physiotherapists are trained in the management of complex lymphatic conditions, providing comprehensive assessment and treatment plans tailored to each patient.', features:['Complete Decongestive Therapy (CDT)','Manual lymphatic drainage (MLD)','Compression garment prescription and fitting','Exercise prescription for lymphatic health','Education on self-management strategies','Referral and coordination with treating physicians'] },
+  massage: { title:'Remedial Massage', desc:'Our qualified remedial massage therapists provide targeted therapeutic massage to address muscle tension, support sports recovery, and manage chronic pain — as a standalone treatment or alongside physiotherapy.', features:['Deep tissue massage','Sports massage and recovery','Trigger point therapy','Myofascial release techniques','Relaxation and stress management','Available as standalone or combined with physio'] },
+  dietitian:{ title:'Dietitian', desc:'Our Accredited Practising Dietitians provide evidence-based nutritional advice integrated with your broader health plan. Medicare care plans and private health rebates available.', features:['Comprehensive dietary assessment','Weight management and healthy eating plans','Injury recovery and anti-inflammatory nutrition','Chronic disease management (diabetes, heart disease)','Sports nutrition and performance fuelling','Medicare Chronic Disease Management plan eligible'] },
+  pilatesx:{ title:'PilatesX', desc:'An advanced Pilates programme for those looking to go beyond clinical Pilates. Combining reformer-based exercises with functional training, PilatesX is designed for performance conditioning and injury prevention.', features:['Reformer Pilates and advanced apparatus','Functional strength and movement training','Suitable for post-rehabilitation progression','Athletes and performance-focused individuals','Programme designed by physiotherapists','Small group and 1:1 options available'] },
+};
+
+function openModal(key) {
+  const m = MODALS[key];
+  if (!m) return;
+  document.getElementById('modal-title').textContent = m.title;
+  document.getElementById('modal-desc').textContent = m.desc;
+  const ul = document.getElementById('modal-features');
+  ul.innerHTML = m.features.map(f => `<li>${f}</li>`).join('');
+  document.getElementById('modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('modal-backdrop').classList.remove('open'); document.body.style.overflow = ''; }
+function closeModalOutside(e) { if (e.target === document.getElementById('modal-backdrop')) closeModal(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function filterServices(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.svc-full-card').forEach(card => {
+    const cats = (card.dataset.cat || '').split(' ');
+    card.hidden = cat !== 'all' && !cats.includes(cat);
+  });
+}
+</script>
+</body>
+</html>

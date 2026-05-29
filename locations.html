@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Locations — PhysioXtra</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div><span class="nav-logo-text">Physio<span>Xtra</span></span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a><a href="locations.html">Locations</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="booking.html" class="btn btn-primary">Book Now</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer">
+  <div class="drawer-panel">
+    <a href="services.html" onclick="closeDrawer()">Services</a><a href="locations.html" onclick="closeDrawer()">Locations</a>
+    <a href="about.html" onclick="closeDrawer()">About</a><a href="contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="booking.html" class="drawer-book" onclick="closeDrawer()">Book Appointment</a>
+  </div>
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+</div>
+<div id="mobile-book-bar">
+  <a href="booking.html" class="btn btn-primary btn-sm">Book Appointment</a>
+  <a href="tel:0883574988" class="mbb-call"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg>Call</a>
+</div>
+
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1584467735815-f778f274e296?w=1400&q=80&auto=format&fit=crop')">
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="tag tag-light">Find Us</span>
+      <h1 class="page-hero-title">Six clinics across<br/>South Australia</h1>
+      <p class="page-hero-sub">Conveniently located on both sides of the city and down the coast — great physiotherapy care is never far away.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="clinic-search">
+      <svg class="clinic-search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="search" id="clinic-search-input" placeholder="Search by suburb or clinic name…" oninput="filterClinics(this.value)" autocomplete="off"/>
+    </div>
+
+    <div class="clinic-grid" id="clinic-grid">
+
+      <!-- Marion -->
+      <div class="clinic-card hq" data-name="marion head office hq" data-suburb="marion">
+        <div class="clinic-card-header">
+          <div class="clinic-name">Marion</div>
+          <div class="clinic-hq-badge">Head Office</div>
+        </div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>724 Marion Road, Marion SA 5043</div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg><a href="tel:0883574988">(08) 8357 4988</a></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:marion@physioxtra.com">marion@physioxtra.com</a></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>Mon–Fri 8am–7pm · Sat 8am–12pm</div>
+        <div class="clinic-features">
+          <span class="clinic-pill">Physiotherapy</span>
+          <span class="clinic-pill">Lokomat</span>
+          <span class="clinic-pill">Hydrotherapy</span>
+          <span class="clinic-pill">Clinical Pilates</span>
+          <span class="clinic-pill">Podiatry</span>
+          <span class="clinic-pill">Dietitian</span>
+        </div>
+        <div class="clinic-card-footer">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Here</a>
+          <a href="https://maps.google.com/?q=724+Marion+Road+Marion+SA+5043" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get Directions</a>
+        </div>
+      </div>
+
+      <!-- Norwood -->
+      <div class="clinic-card" data-name="norwood" data-suburb="norwood">
+        <div class="clinic-card-header"><div class="clinic-name">Norwood</div></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Norwood, Adelaide SA</div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>Mon–Fri 7:30am–6:30pm</div>
+        <div class="clinic-features">
+          <span class="clinic-pill">Physiotherapy</span>
+          <span class="clinic-pill">Lokomat</span>
+          <span class="clinic-pill">ArmeoSpring</span>
+          <span class="clinic-pill">Clinical Pilates</span>
+          <span class="clinic-pill">Remedial Massage</span>
+        </div>
+        <div class="clinic-card-footer">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Here</a>
+          <a href="https://maps.google.com/?q=Norwood+Adelaide+SA" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get Directions</a>
+        </div>
+      </div>
+
+      <!-- Pirie Street -->
+      <div class="clinic-card" data-name="pirie street cbd city" data-suburb="pirie street adelaide cbd">
+        <div class="clinic-card-header"><div class="clinic-name">Pirie Street (CBD)</div></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>115–117 Pirie St, Adelaide 5000</div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg><a href="tel:0872219110">(08) 7221 9110</a></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:piriestreet@physioxtra.com">piriestreet@physioxtra.com</a></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>Mon–Fri 7:30am–7pm</div>
+        <div class="clinic-features">
+          <span class="clinic-pill">Physiotherapy</span>
+          <span class="clinic-pill">Clinical Pilates</span>
+          <span class="clinic-pill">GLA:D Program</span>
+          <span class="clinic-pill">Remedial Massage</span>
+        </div>
+        <div class="clinic-card-footer">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Here</a>
+          <a href="https://maps.google.com/?q=115+Pirie+Street+Adelaide+SA+5000" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get Directions</a>
+        </div>
+      </div>
+
+      <!-- Hallett Cove -->
+      <div class="clinic-card" data-name="hallett cove" data-suburb="hallett cove">
+        <div class="clinic-card-header"><div class="clinic-name">Hallett Cove</div></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Hallett Cove, Adelaide SA</div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>Mon–Fri 8am–6pm</div>
+        <div class="clinic-features">
+          <span class="clinic-pill">Physiotherapy</span>
+          <span class="clinic-pill">Clinical Pilates</span>
+          <span class="clinic-pill">Remedial Massage</span>
+          <span class="clinic-pill">Podiatry</span>
+        </div>
+        <div class="clinic-card-footer">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Here</a>
+          <a href="https://maps.google.com/?q=Hallett+Cove+SA" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get Directions</a>
+        </div>
+      </div>
+
+      <!-- Seaford -->
+      <div class="clinic-card" data-name="seaford" data-suburb="seaford">
+        <div class="clinic-card-header"><div class="clinic-name">Seaford</div></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Seaford, Adelaide SA</div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>Mon–Fri 8am–6pm</div>
+        <div class="clinic-features">
+          <span class="clinic-pill">Physiotherapy</span>
+          <span class="clinic-pill">Clinical Pilates</span>
+          <span class="clinic-pill">GLA:D Program</span>
+          <span class="clinic-pill">Hydrotherapy</span>
+        </div>
+        <div class="clinic-card-footer">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Here</a>
+          <a href="https://maps.google.com/?q=Seaford+SA" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get Directions</a>
+        </div>
+      </div>
+
+      <!-- Victor Harbor -->
+      <div class="clinic-card" data-name="victor harbor harbour" data-suburb="victor harbor">
+        <div class="clinic-card-header"><div class="clinic-name">Victor Harbor</div></div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Victor Harbor SA</div>
+        <div class="clinic-detail"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>Mon–Fri 9am–5pm</div>
+        <div class="clinic-features">
+          <span class="clinic-pill">Physiotherapy</span>
+          <span class="clinic-pill">Remedial Massage</span>
+          <span class="clinic-pill">Podiatry</span>
+        </div>
+        <div class="clinic-card-footer">
+          <a href="booking.html" class="btn btn-primary btn-sm">Book Here</a>
+          <a href="https://maps.google.com/?q=Victor+Harbor+SA" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get Directions</a>
+        </div>
+      </div>
+
+    </div>
+    <div id="no-results" style="display:none;text-align:center;padding:48px 0;color:var(--muted)">
+      <div style="font-size:2rem;margin-bottom:12px">🔍</div>
+      <div style="font-size:1.0625rem;font-weight:600;margin-bottom:6px">No clinics found</div>
+      <div style="font-size:.9rem">Try a different suburb name, or <a href="contact.html" style="color:var(--teal);font-weight:600">contact us</a> for help finding the right location.</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container"><div class="cta-inner">
+    <span class="tag tag-light">Same-Day Bookings</span>
+    <h2 class="cta-heading">Find your nearest clinic<br/>and book today</h2>
+    <p class="cta-sub">NDIS, DVA, Medicare, and all major health funds accepted.</p>
+    <div class="cta-actions">
+      <a href="booking.html" class="btn btn-white">Book Online</a>
+      <a href="tel:0883574988" class="btn btn-outline">Call (08) 8357 4988</a>
+    </div>
+  </div></div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom"><span>© 2025 PhysioXtra. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div>
+</footer>
+<button id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+<script src="js/main.js"></script>
+<script>
+function filterClinics(val) {
+  const q = val.toLowerCase().trim();
+  let any = false;
+  document.querySelectorAll('.clinic-card').forEach(c => {
+    const searchable = ((c.dataset.name || '') + ' ' + (c.dataset.suburb || '')).toLowerCase();
+    const show = !q || searchable.includes(q);
+    c.hidden = !show;
+    if (show) any = true;
+  });
+  document.getElementById('no-results').style.display = any ? 'none' : 'block';
+}
+</script>
+</body>
+</html>
