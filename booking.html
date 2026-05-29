@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book an Appointment — PhysioXtra</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div>
+        <span class="nav-logo-text">Physio<span>Xtra</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="booking.html" class="btn btn-primary">Book Now</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer">
+  <div class="drawer-panel">
+    <a href="services.html" onclick="closeDrawer()">Services</a>
+    <a href="locations.html" onclick="closeDrawer()">Locations</a>
+    <a href="about.html" onclick="closeDrawer()">About</a>
+    <a href="contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="booking.html" class="drawer-book" onclick="closeDrawer()">Book Appointment</a>
+  </div>
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+</div>
+<div id="mobile-book-bar">
+  <a href="tel:0883574988" class="btn btn-outline-dark btn-sm btn-full">Call (08) 8357 4988</a>
+</div>
+
+<!-- Page hero -->
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&q=80&auto=format&fit=crop')">
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="tag tag-light">Online Booking</span>
+      <h1 class="page-hero-title">Book Your<br/>Appointment</h1>
+      <p class="page-hero-sub">Same-day appointments available. Choose your clinic, service, and preferred time in just a few steps.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Booking wizard -->
+<section class="section">
+  <div class="container">
+    <div class="booking-layout">
+
+      <!-- Main wizard -->
+      <div class="booking-main">
+        <!-- Progress bar -->
+        <div class="booking-progress">
+          <div class="progress-steps">
+            <div class="progress-step">
+              <div class="step-dot active" id="dot-1">1</div>
+              <div class="step-line" id="line-1"></div>
+            </div>
+            <div class="progress-step">
+              <div class="step-dot" id="dot-2">2</div>
+              <div class="step-line" id="line-2"></div>
+            </div>
+            <div class="progress-step">
+              <div class="step-dot" id="dot-3">3</div>
+              <div class="step-line" id="line-3"></div>
+            </div>
+            <div class="progress-step">
+              <div class="step-dot" id="dot-4">4</div>
+            </div>
+          </div>
+          <div class="progress-labels">
+            <div class="step-label active" id="lbl-1">Clinic</div>
+            <div class="step-label" id="lbl-2">Service</div>
+            <div class="step-label" id="lbl-3">Date &amp; Time</div>
+            <div class="step-label" id="lbl-4">Your Details</div>
+          </div>
+        </div>
+
+        <!-- Step 1: Choose clinic -->
+        <div class="booking-step active" id="step-1">
+          <div class="step-title">Choose your clinic</div>
+          <div class="step-sub">Select the location most convenient for you.</div>
+          <div class="clinic-picker">
+            <div class="clinic-option" data-clinic="Marion" data-addr="724 Marion Road, Marion SA 5043" onclick="selectClinic(this)">
+              <div class="clinic-option-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+              <div class="clinic-option-name">Marion <span style="font-size:.72rem;color:var(--teal);font-weight:600">HQ</span></div>
+              <div class="clinic-option-addr">724 Marion Road, Marion SA 5043<br/>Mon–Fri 8am–7pm · Sat 8am–12pm</div>
+            </div>
+            <div class="clinic-option" data-clinic="Norwood" data-addr="Norwood, Adelaide SA" onclick="selectClinic(this)">
+              <div class="clinic-option-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+              <div class="clinic-option-name">Norwood</div>
+              <div class="clinic-option-addr">Norwood, Adelaide SA<br/>Mon–Fri 7:30am–6:30pm</div>
+            </div>
+            <div class="clinic-option" data-clinic="Pirie Street (CBD)" data-addr="115–117 Pirie St, Adelaide 5000" onclick="selectClinic(this)">
+              <div class="clinic-option-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+              <div class="clinic-option-name">Pirie Street (CBD)</div>
+              <div class="clinic-option-addr">115–117 Pirie St, Adelaide<br/>Mon–Fri 7:30am–7pm</div>
+            </div>
+            <div class="clinic-option" data-clinic="Hallett Cove" data-addr="Hallett Cove, Adelaide SA" onclick="selectClinic(this)">
+              <div class="clinic-option-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+              <div class="clinic-option-name">Hallett Cove</div>
+              <div class="clinic-option-addr">Hallett Cove, Adelaide SA<br/>Mon–Fri 8am–6pm</div>
+            </div>
+            <div class="clinic-option" data-clinic="Seaford" data-addr="Seaford, Adelaide SA" onclick="selectClinic(this)">
+              <div class="clinic-option-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+              <div class="clinic-option-name">Seaford</div>
+              <div class="clinic-option-addr">Seaford, Adelaide SA<br/>Mon–Fri 8am–6pm</div>
+            </div>
+            <div class="clinic-option" data-clinic="Victor Harbor" data-addr="Victor Harbor SA" onclick="selectClinic(this)">
+              <div class="clinic-option-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+              <div class="clinic-option-name">Victor Harbor</div>
+              <div class="clinic-option-addr">Victor Harbor SA<br/>Mon–Fri 9am–5pm</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Choose service -->
+        <div class="booking-step" id="step-2">
+          <div class="step-title">Choose a service</div>
+          <div class="step-sub">Select the treatment you'd like to book.</div>
+          <div class="service-picker">
+            <div class="service-option" data-service="Physiotherapy" data-dur="30 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">Physiotherapy</div><div class="service-option-dur">30 min · Initial or follow-up consultation</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+            <div class="service-option" data-service="Clinical Pilates" data-dur="60 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">Clinical Pilates</div><div class="service-option-dur">60 min · Group or individual session</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+            <div class="service-option" data-service="Hydrotherapy" data-dur="45 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4.82L21 9l-9-6z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">Hydrotherapy</div><div class="service-option-dur">45 min · Therapeutic pool session</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+            <div class="service-option" data-service="GLA:D Program" data-dur="60 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">GLA:D Program</div><div class="service-option-dur">60 min · Hip &amp; knee osteoarthritis program</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+            <div class="service-option" data-service="Podiatry" data-dur="30 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-2 .9-2 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">Podiatry</div><div class="service-option-dur">30 min · Foot &amp; lower limb assessment</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+            <div class="service-option" data-service="Remedial Massage" data-dur="60 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M21 6.5C21 4.01 18.99 2 16.5 2h-9C5.01 2 3 4.01 3 6.5v11C3 19.99 5.01 22 7.5 22h9c2.49 0 4.5-2.01 4.5-4.5v-11zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">Remedial Massage</div><div class="service-option-dur">60 min · Therapeutic massage</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+            <div class="service-option" data-service="Dietitian Consultation" data-dur="45 min" onclick="selectService(this)">
+              <div class="service-option-icon"><svg viewBox="0 0 24 24"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3z"/></svg></div>
+              <div class="service-option-text"><div class="service-option-name">Dietitian Consultation</div><div class="service-option-dur">45 min · Nutritional assessment</div></div>
+              <div class="service-option-radio"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Date & time -->
+        <div class="booking-step" id="step-3">
+          <div class="step-title">Pick a date &amp; time</div>
+          <div class="step-sub">All available slots are shown below.</div>
+          <div class="datetime-grid">
+            <div>
+              <div class="dt-label">Select date</div>
+              <div class="cal-header">
+                <button class="cal-nav-btn" onclick="prevMonth()" aria-label="Previous month"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+                <div class="cal-month" id="cal-month-label"></div>
+                <button class="cal-nav-btn" onclick="nextMonth()" aria-label="Next month"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+              </div>
+              <div class="cal-grid" id="cal-grid"></div>
+            </div>
+            <div>
+              <div class="dt-label">Select time</div>
+              <div id="time-slots-wrap"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Details -->
+        <div class="booking-step" id="step-4">
+          <div class="step-title">Your details</div>
+          <div class="step-sub">We'll use this to confirm your appointment.</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="fname">First name <span class="req">*</span></label>
+              <input class="form-input" id="fname" type="text" placeholder="Jane" autocomplete="given-name"/>
+              <div class="form-error" id="err-fname">Please enter your first name.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last name <span class="req">*</span></label>
+              <input class="form-input" id="lname" type="text" placeholder="Smith" autocomplete="family-name"/>
+              <div class="form-error" id="err-lname">Please enter your last name.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email <span class="req">*</span></label>
+              <input class="form-input" id="email" type="email" placeholder="jane@email.com" autocomplete="email"/>
+              <div class="form-error" id="err-email">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone <span class="req">*</span></label>
+              <input class="form-input" id="phone" type="tel" placeholder="04XX XXX XXX" autocomplete="tel"/>
+              <div class="form-error" id="err-phone">Please enter your phone number.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="dob">Date of birth</label>
+              <input class="form-input" id="dob" type="date" autocomplete="bday"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="health-fund">Health fund</label>
+              <select class="form-select" id="health-fund">
+                <option value="">Select (optional)</option>
+                <option>Medibank Private</option>
+                <option>BUPA</option>
+                <option>HCF</option>
+                <option>NIB</option>
+                <option>HBF</option>
+                <option>AHM</option>
+                <option>NDIS</option>
+                <option>DVA</option>
+                <option>Medicare Care Plan</option>
+                <option>Self-funded</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="notes">Additional notes</label>
+              <textarea class="form-textarea" id="notes" placeholder="Describe your condition, referral details, or anything else we should know…"></textarea>
+            </div>
+            <div class="form-group full">
+              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:.875rem;color:var(--ink-soft)">
+                <input type="checkbox" id="consent" style="width:16px;height:16px;margin-top:2px;accent-color:var(--teal);flex-shrink:0"/>
+                I consent to PhysioXtra storing my information and contacting me regarding this appointment.
+              </label>
+              <div class="form-error" id="err-consent">Please give your consent to continue.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Confirmation -->
+        <div class="booking-step" id="step-5">
+          <div class="confirm-wrap">
+            <div class="confirm-icon-wrap"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+            <div class="confirm-ref-label">Booking reference</div>
+            <div class="confirm-ref-num" id="conf-ref">—</div>
+            <h2 class="confirm-title">You're booked in!</h2>
+            <p class="confirm-sub">A confirmation has been sent to <strong id="conf-email">—</strong>. We'll give you a call 24 hours before your appointment.</p>
+            <div class="confirm-details" id="conf-details"></div>
+            <div class="confirm-actions">
+              <a href="index.html" class="btn btn-outline-dark">Back to Home</a>
+              <button class="btn btn-primary" onclick="window.print()">Print Confirmation</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav buttons -->
+        <div class="booking-nav" id="booking-nav">
+          <button class="btn btn-ghost btn-sm" id="btn-back" onclick="prevStep()" style="visibility:hidden">← Back</button>
+          <button class="btn btn-primary" id="btn-next" onclick="nextStep()">Choose Service →</button>
+        </div>
+      </div>
+
+      <!-- Sidebar summary -->
+      <div class="booking-sidebar">
+        <div class="summary-card">
+          <div class="summary-header"><h3>Your Booking Summary</h3></div>
+          <div class="summary-body">
+            <div class="summary-row">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <div><div class="summary-label">Clinic</div><div class="summary-value empty" id="sum-clinic">Not selected</div></div>
+            </div>
+            <div class="summary-row">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
+              <div><div class="summary-label">Service</div><div class="summary-value empty" id="sum-service">Not selected</div></div>
+            </div>
+            <div class="summary-row">
+              <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-2 .9-2 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              <div><div class="summary-label">Date &amp; Time</div><div class="summary-value empty" id="sum-datetime">Not selected</div></div>
+            </div>
+          </div>
+          <div class="summary-footer">
+            <a href="contact.html" style="font-size:.8rem;color:var(--muted)">Need help? <span style="color:var(--teal);font-weight:600">Contact us</span></a>
+          </div>
+        </div>
+        <div style="background:var(--teal-pale);border:1.5px solid var(--teal-light);border-radius:var(--radius);padding:18px">
+          <div style="font-size:.8125rem;font-weight:700;color:var(--teal-dark);margin-bottom:8px">📞 Prefer to call?</div>
+          <div style="font-size:.875rem;color:var(--ink-soft);margin-bottom:10px">Our friendly team can book your appointment over the phone.</div>
+          <a href="tel:0883574988" class="btn btn-outline-dark btn-sm btn-full">(08) 8357 4988</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding:24px 0">
+      <span>© 2025 PhysioXtra. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ── Booking state ─────────────────────────────────────────────────────────
+const state = { clinic: null, service: null, duration: null, date: null, time: null, step: 1 };
+const TOTAL_STEPS = 4;
+let calYear, calMonth;
+
+function selectClinic(el) {
+  document.querySelectorAll('.clinic-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  state.clinic = el.dataset.clinic;
+  updateSummary();
+}
+
+function selectService(el) {
+  document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  state.service = el.dataset.service;
+  state.duration = el.dataset.dur;
+  updateSummary();
+}
+
+function updateSummary() {
+  const sc = document.getElementById('sum-clinic');
+  const ss = document.getElementById('sum-service');
+  const sd = document.getElementById('sum-datetime');
+  if (state.clinic) { sc.textContent = state.clinic; sc.classList.remove('empty'); } else { sc.textContent = 'Not selected'; sc.classList.add('empty'); }
+  if (state.service) { ss.textContent = state.service + (state.duration ? ' · ' + state.duration : ''); ss.classList.remove('empty'); } else { ss.textContent = 'Not selected'; ss.classList.add('empty'); }
+  if (state.date && state.time) { sd.textContent = state.date + ' at ' + state.time; sd.classList.remove('empty'); } else { sd.textContent = 'Not selected'; sd.classList.add('empty'); }
+}
+
+// ── Calendar ──────────────────────────────────────────────────────────────
+const BOOKED = [3, 7, 11, 14, 17, 21]; // demo booked day-of-months
+const BLOCKED_TIMES = ['9:30 AM', '11:00 AM', '2:00 PM'];
+const ALL_TIMES = ['8:00 AM','8:30 AM','9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM'];
+
+function initCalendar() {
+  const now = new Date();
+  calYear = now.getFullYear(); calMonth = now.getMonth();
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-label').textContent = monthNames[calMonth] + ' ' + calYear;
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+  ['Su','Mo','Tu','We','Th','Fr','Sa'].forEach(d => { const el = document.createElement('div'); el.className = 'cal-day-name'; el.textContent = d; grid.appendChild(el); });
+  const firstDay = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  const today = new Date(); today.setHours(0,0,0,0);
+  for (let i = 0; i < firstDay; i++) { const el = document.createElement('div'); el.className = 'cal-day other-month'; grid.appendChild(el); }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const el = document.createElement('div');
+    const date = new Date(calYear, calMonth, d);
+    const dayOfWeek = date.getDay();
+    const isPast = date < today;
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    const isToday = date.getTime() === today.getTime();
+    if (isPast || isWeekend) { el.className = 'cal-day past'; el.textContent = d; }
+    else { el.className = 'cal-day available' + (isToday ? ' today' : ''); el.textContent = d; el.onclick = () => selectDay(d, el); }
+    grid.appendChild(el);
+  }
+}
+
+function selectDay(d, el) {
+  document.querySelectorAll('.cal-day.selected').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  const date = new Date(calYear, calMonth, d);
+  state.date = date.toLocaleDateString('en-AU', { weekday:'short', day:'numeric', month:'short' });
+  state.time = null;
+  updateSummary();
+  renderTimeSlots(d);
+}
+
+function renderTimeSlots(day) {
+  const wrap = document.getElementById('time-slots-wrap');
+  const blocked = BOOKED.includes(day) ? BLOCKED_TIMES : BLOCKED_TIMES.slice(0, 1);
+  wrap.innerHTML = '<div class="time-slots">' + ALL_TIMES.map(t => {
+    const taken = blocked.includes(t);
+    return `<div class="time-slot${taken ? ' taken' : ''}" onclick="${taken ? '' : 'selectTime(this, \'' + t + '\')'}">${t}</div>`;
+  }).join('') + '</div>';
+}
+
+function selectTime(el, t) {
+  document.querySelectorAll('.time-slot.selected').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+  state.time = t;
+  updateSummary();
+}
+
+function prevMonth() { if (calMonth === 0) { calMonth = 11; calYear--; } else calMonth--; const now = new Date(); if (calYear < now.getFullYear() || (calYear === now.getFullYear() && calMonth < now.getMonth())) { calMonth = now.getMonth(); calYear = now.getFullYear(); } renderCalendar(); }
+function nextMonth() { if (calMonth === 11) { calMonth = 0; calYear++; } else calMonth++; renderCalendar(); }
+
+// ── Step navigation ───────────────────────────────────────────────────────
+function goToStep(n) {
+  document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + n).classList.add('active');
+  for (let i = 1; i <= TOTAL_STEPS; i++) {
+    const dot = document.getElementById('dot-' + i);
+    const lbl = document.getElementById('lbl-' + i);
+    const line = document.getElementById('line-' + i);
+    dot.className = 'step-dot' + (i < n ? ' done' : i === n ? ' active' : '');
+    if (i < n) dot.innerHTML = '<svg viewBox="0 0 24 24"><path fill="white" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+    else dot.textContent = i;
+    lbl.className = 'step-label' + (i < n ? ' done' : i === n ? ' active' : '');
+    if (line) line.className = 'step-line' + (i < n ? ' done' : '');
+  }
+  state.step = n;
+  const btnBack = document.getElementById('btn-back');
+  const btnNext = document.getElementById('btn-next');
+  const navBar  = document.getElementById('booking-nav');
+  btnBack.style.visibility = n > 1 ? 'visible' : 'hidden';
+  if (n === TOTAL_STEPS + 1) { navBar.style.display = 'none'; return; }
+  const labels = ['', 'Choose Service →', 'Pick Date & Time →', 'Enter Details →', 'Confirm Booking'];
+  btnNext.textContent = labels[n];
+  window.scrollTo({ top: document.querySelector('.booking-main').getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+}
+
+function nextStep() {
+  if (state.step === 1 && !state.clinic) { alert('Please select a clinic.'); return; }
+  if (state.step === 2 && !state.service) { alert('Please choose a service.'); return; }
+  if (state.step === 3 && (!state.date || !state.time)) { alert('Please select a date and time.'); return; }
+  if (state.step === 4) { if (!validateDetails()) return; submitBooking(); return; }
+  goToStep(state.step + 1);
+}
+
+function prevStep() { if (state.step > 1) goToStep(state.step - 1); }
+
+function validateDetails() {
+  let valid = true;
+  const fields = [
+    { id: 'fname', err: 'err-fname', check: v => v.trim().length > 0 },
+    { id: 'lname', err: 'err-lname', check: v => v.trim().length > 0 },
+    { id: 'email', err: 'err-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    { id: 'phone', err: 'err-phone', check: v => v.trim().length >= 8 },
+  ];
+  fields.forEach(f => {
+    const el = document.getElementById(f.id);
+    const errEl = document.getElementById(f.err);
+    const ok = f.check(el.value);
+    el.classList.toggle('error', !ok);
+    errEl.classList.toggle('show', !ok);
+    if (!ok) valid = false;
+  });
+  const consent = document.getElementById('consent');
+  const errConsent = document.getElementById('err-consent');
+  if (!consent.checked) { errConsent.classList.add('show'); valid = false; } else errConsent.classList.remove('show');
+  return valid;
+}
+
+function submitBooking() {
+  const ref = 'PX-' + Date.now().toString(36).toUpperCase().slice(-6);
+  const email = document.getElementById('email').value;
+  const fname = document.getElementById('fname').value;
+  document.getElementById('conf-ref').textContent = ref;
+  document.getElementById('conf-email').textContent = email;
+  document.getElementById('conf-details').innerHTML = `
+    <div class="confirm-row"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div><div class="confirm-row-label">Patient</div><div class="confirm-row-value">${fname} ${document.getElementById('lname').value}</div></div></div>
+    <div class="confirm-row"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><div><div class="confirm-row-label">Clinic</div><div class="confirm-row-value">${state.clinic}</div></div></div>
+    <div class="confirm-row"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg><div><div class="confirm-row-label">Service</div><div class="confirm-row-value">${state.service} · ${state.duration}</div></div></div>
+    <div class="confirm-row"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-2 .9-2 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg><div><div class="confirm-row-label">Date &amp; Time</div><div class="confirm-row-value">${state.date} at ${state.time}</div></div></div>
+  `;
+  goToStep(5);
+}
+
+// Init
+initCalendar();
+goToStep(1);
+document.getElementById('time-slots-wrap').innerHTML = '<div class="no-date-msg">← Select a date first</div>';
+</script>
+</body>
+</html>

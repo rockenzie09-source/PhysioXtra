@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — PhysioXtra</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg></div><span class="nav-logo-text">Physio<span>Xtra</span></span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a><a href="locations.html">Locations</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta"><a href="booking.html" class="btn btn-primary">Book Now</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleDrawer()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer">
+  <div class="drawer-panel">
+    <a href="services.html" onclick="closeDrawer()">Services</a><a href="locations.html" onclick="closeDrawer()">Locations</a>
+    <a href="about.html" onclick="closeDrawer()">About</a><a href="contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="booking.html" class="drawer-book" onclick="closeDrawer()">Book Appointment</a>
+  </div>
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+</div>
+<div id="mobile-book-bar">
+  <a href="booking.html" class="btn btn-primary btn-sm">Book Appointment</a>
+  <a href="tel:0883574988" class="mbb-call"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg>Call</a>
+</div>
+
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1400&q=80&auto=format&fit=crop')">
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="tag tag-light">Our Story</span>
+      <h1 class="page-hero-title">Built on care.<br/>Driven by results.</h1>
+      <p class="page-hero-sub">Founded in 1996 with a vision to bring elite physiotherapy to every South Australian. Three decades on, that mission drives everything we do.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Mission -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-stack fade-up">
+        <div class="about-badge"><div class="about-badge-num">30+</div><div class="about-badge-text">Years caring for SA</div></div>
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80&auto=format&fit=crop" alt="PhysioXtra team" loading="lazy"/>
+        <img class="about-img-accent" src="https://images.unsplash.com/photo-1517120026326-d87759a7b63b?w=400&q=80&auto=format&fit=crop" alt="PhysioXtra clinic" loading="lazy"/>
+      </div>
+      <div class="about-content fade-up delay-2">
+        <div>
+          <span class="tag">Who We Are</span>
+          <h2 class="section-heading" style="margin-top:14px">Elite care for everyone</h2>
+        </div>
+        <p class="section-sub">PhysioXtra was founded in 1996 by Kath Chigwidden with one clear purpose — to make the kind of physiotherapy previously reserved for elite athletes and private hospitals accessible to every South Australian, regardless of their circumstances.</p>
+        <p style="font-size:.9375rem;color:var(--muted);line-height:1.75">That vision has guided every decision since: which services to offer, which technology to invest in, how to train our team, and where to open our clinics. Today, with six locations and twelve specialist services, we remain as committed to that original purpose as ever.</p>
+        <div class="about-feature">
+          <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+          <div><div class="about-feature-title">Accredited &amp; registered</div><div class="about-feature-desc">All practitioners are registered with AHPRA and their relevant professional bodies.</div></div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05C16.19 13.9 17 15.02 17 16.5V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <div><div class="about-feature-title">Multidisciplinary team</div><div class="about-feature-desc">Physios, podiatrists, dietitians, and massage therapists working together around your care.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center fade-up">
+      <span class="tag">Our Values</span>
+      <h2 class="section-heading">What we stand for</h2>
+      <p class="section-sub">Six values that guide how we care for patients, train our staff, and grow our practice.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-up"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div><div class="value-title">Patient-centred</div><div class="value-desc">Every decision begins and ends with what's best for the person in front of us — not protocols, not convenience.</div></div>
+      <div class="value-card fade-up delay-1"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div><div class="value-title">Clinical excellence</div><div class="value-desc">We hire exceptional clinicians and invest in their ongoing development. Good is never good enough.</div></div>
+      <div class="value-card fade-up delay-2"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div class="value-title">Evidence-based</div><div class="value-desc">Every treatment protocol is grounded in the best available clinical evidence, reviewed regularly.</div></div>
+      <div class="value-card fade-up delay-3"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><div class="value-title">Accessibility</div><div class="value-desc">Six clinics, flexible hours, NDIS and Medicare support. We remove barriers to great care.</div></div>
+      <div class="value-card fade-up delay-1"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div><div class="value-title">Innovation</div><div class="value-desc">Investing in Lokomat, ArmeoSpring, and hydrotherapy keeps our care at the clinical frontier.</div></div>
+      <div class="value-card fade-up delay-2"><div class="value-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><div class="value-title">Community</div><div class="value-desc">We give back to the communities we serve — through education, sponsorship, and advocacy.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start" class="timeline-layout">
+      <div class="fade-up">
+        <span class="tag">Our Journey</span>
+        <h2 class="section-heading" style="margin-top:14px;margin-bottom:20px">Three decades of<br/>making a difference</h2>
+        <p class="section-sub">From a single clinic to a network of six — every step forward has been guided by our commitment to accessible, excellent care.</p>
+      </div>
+      <div class="timeline fade-up delay-2">
+        <div class="timeline-item">
+          <div class="timeline-year">1996</div>
+          <div class="timeline-title">PhysioXtra founded</div>
+          <div class="timeline-desc">Kath Chigwidden opens the first clinic in Marion with a mission to bring elite physiotherapy to every South Australian.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2002</div>
+          <div class="timeline-title">Norwood clinic opens</div>
+          <div class="timeline-desc">Expansion to the eastern suburbs brings PhysioXtra to a new community, with additional physiotherapy and clinical Pilates services.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2008</div>
+          <div class="timeline-title">Hydrotherapy facility launched</div>
+          <div class="timeline-desc">State-of-the-art hydrotherapy pool installed at Marion — one of the first private physiotherapy practices in SA to offer this service.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2014</div>
+          <div class="timeline-title">Lokomat arrives in SA</div>
+          <div class="timeline-desc">PhysioXtra becomes one of the first private clinics in South Australia to offer Lokomat robotic gait training to the public.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-title">CBD &amp; south coast expansion</div>
+          <div class="timeline-desc">New clinics open in Pirie Street (CBD), Seaford, and Victor Harbor, bringing comprehensive care to the south coast.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-title">RecoverX &amp; ArmeoSpring</div>
+          <div class="timeline-desc">RecoverX Recovery Centre launches alongside the ArmeoSpring upper limb rehab system at Norwood — setting a new benchmark in private physiotherapy technology.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center fade-up">
+      <span class="tag">Our People</span>
+      <h2 class="section-heading">Meet the team</h2>
+      <p class="section-sub">Our practitioners are the heart of PhysioXtra — experienced, passionate, and genuinely invested in your outcomes.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-up"><div class="team-avatar">👩‍⚕️</div><div class="team-name">Kath Chigwidden</div><div class="team-role">Founder &amp; Director</div><div class="team-clinic">Marion</div></div>
+      <div class="team-card fade-up delay-1"><div class="team-avatar">👨‍⚕️</div><div class="team-name">James Hartley</div><div class="team-role">Senior Physiotherapist</div><div class="team-clinic">Norwood</div></div>
+      <div class="team-card fade-up delay-2"><div class="team-avatar">👩‍⚕️</div><div class="team-name">Priya Sharma</div><div class="team-role">Physiotherapist</div><div class="team-clinic">Pirie Street</div></div>
+      <div class="team-card fade-up delay-3"><div class="team-avatar">👨‍⚕️</div><div class="team-name">Tom Nguyen</div><div class="team-role">Lokomat Specialist</div><div class="team-clinic">Norwood &amp; Marion</div></div>
+      <div class="team-card fade-up delay-1"><div class="team-avatar">👩‍⚕️</div><div class="team-name">Sarah O'Brien</div><div class="team-role">Podiatrist</div><div class="team-clinic">Marion</div></div>
+      <div class="team-card fade-up delay-2"><div class="team-avatar">👨‍⚕️</div><div class="team-name">Marcus Webb</div><div class="team-role">Accredited Dietitian</div><div class="team-clinic">All Clinics</div></div>
+      <div class="team-card fade-up delay-3"><div class="team-avatar">👩‍⚕️</div><div class="team-name">Claire Butson</div><div class="team-role">Hydrotherapy Physio</div><div class="team-clinic">Marion &amp; Seaford</div></div>
+      <div class="team-card fade-up delay-4"><div class="team-avatar">👨‍⚕️</div><div class="team-name">Alex Ferreira</div><div class="team-role">Remedial Massage</div><div class="team-clinic">Hallett Cove</div></div>
+    </div>
+    <p style="text-align:center;margin-top:32px;font-size:.875rem;color:var(--muted)">Names and photos are representative. Our full team details are available at each clinic.</p>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container"><div class="cta-inner">
+    <span class="tag tag-light">Work With Us</span>
+    <h2 class="cta-heading">Join the PhysioXtra family</h2>
+    <p class="cta-sub">We're always looking for passionate practitioners. Or, ready to start your care journey?</p>
+    <div class="cta-actions">
+      <a href="booking.html" class="btn btn-white">Book an Appointment</a>
+      <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div></div>
+</div>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom"><span>© 2025 PhysioXtra. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </div>
+</footer>
+<button id="btt" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
+<script src="js/main.js"></script>
+<style>@media(max-width:700px){.timeline-layout{grid-template-columns:1fr!important}}</style>
+</body>
+</html>
