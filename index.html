@@ -399,23 +399,128 @@
     }
     .footer-bottom a:hover { color: var(--teal-light); }
 
-    /* ─── Responsive ────────────────────────────────────────────────────── */
+    /* ─── Mobile menu drawer ────────────────────────────────────────────── */
+    #mobile-drawer {
+      display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+      z-index: 98; flex-direction: column;
+    }
+    #mobile-drawer.open { display: flex; }
+    .drawer-panel {
+      background: white; padding: 12px 20px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.14);
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .drawer-panel a {
+      display: block; font-size: 1rem; font-weight: 500; color: var(--ink-soft);
+      padding: 14px 16px; border-radius: 10px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .drawer-panel a:hover { background: var(--teal-pale); color: var(--teal); }
+    .drawer-book {
+      margin: 8px 0 0; padding: 14px 20px;
+      background: var(--teal); color: white; border-radius: 999px;
+      font-size: 1rem; font-weight: 600; text-align: center;
+      box-shadow: 0 4px 14px rgba(4,156,164,.35);
+    }
+    .drawer-overlay {
+      flex: 1; background: rgba(0,0,0,.3); cursor: pointer;
+    }
+
+    /* ─── Mobile sticky CTA bar ─────────────────────────────────────────── */
+    #mobile-book-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: white; border-top: 1px solid var(--border);
+      padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+      gap: 10px; align-items: center;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.1);
+    }
+    #mobile-book-bar a { flex: 1; text-align: center; }
+    #mobile-book-bar .mbb-call {
+      flex: 0 0 auto; display: flex; align-items: center; gap: 8px;
+      font-size: .875rem; font-weight: 600; color: var(--teal);
+      padding: 13px 18px; border: 2px solid var(--teal-light);
+      border-radius: 999px; white-space: nowrap;
+    }
+    #mobile-book-bar .mbb-call svg { width: 16px; height: 16px; fill: var(--teal); }
+
+    /* ─── Tablet (≤ 900px) ──────────────────────────────────────────────── */
     @media (max-width: 900px) {
       .tech-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .about-img-accent { right: -12px; bottom: -12px; }
-      .about-badge { left: -12px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-image-stack { padding-bottom: 16px; }
+      .about-img-accent { right: 0; bottom: -16px; }
+      .about-badge { left: 0; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
     }
-    @media (max-width: 700px) {
+
+    /* ─── Mobile (≤ 640px) ──────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+
+      /* Nav */
       .nav-links, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
       #nav:not(.scrolled) .nav-hamburger span { background: white; }
       #nav.scrolled .nav-hamburger span { background: var(--ink); }
-      .hero-stats { gap: 24px; }
-      .services-header { flex-direction: column; align-items: flex-start; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+
+      /* Mobile sticky bar */
+      #mobile-book-bar { display: flex; }
+
+      /* Hero */
+      #hero { padding: 100px 0 100px; }
+      .hero-sub { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { justify-content: center; }
+      .hero-stats {
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: 20px 16px; padding-top: 28px;
+      }
+      .hero-stat-num { font-size: 1.75rem; }
+
+      /* Section spacing */
+      #services, #technology, #locations, #about, #testimonials { padding: 64px 0; }
+      #cta { padding: 64px 0; }
+
+      /* Services */
+      .services-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* Technology */
+      .tech-card { min-height: 260px !important; }
+
+      /* About — hide the overflow decorations on small screens */
+      .about-image-stack { padding: 0; }
+      .about-img-accent { display: none; }
+      .about-badge {
+        position: static; display: inline-flex; gap: 12px; align-items: center;
+        border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 16px;
+      }
+      .about-badge-num { font-size: 1.5rem; }
+      .about-img-main { aspect-ratio: 3/2; }
+
+      /* CTA */
+      .cta-actions { flex-direction: column; align-items: stretch; }
+      .cta-actions .btn { justify-content: center; }
+
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      /* Locations */
+      .locations-grid { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+      .footer-top { padding: 48px 0 36px; }
+
+      /* Add bottom padding so sticky bar doesn't overlap footer */
+      #footer { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+    }
+
+    /* ─── Small phones (≤ 380px) ────────────────────────────────────────── */
+    @media (max-width: 380px) {
+      .hero-headline { font-size: 2.25rem; }
+      .btn { padding: 13px 20px; font-size: .875rem; }
     }
 
     /* ─── Scroll animations ─────────────────────────────────────────────── */
@@ -453,12 +558,34 @@
         <div class="nav-cta">
           <a href="#cta" class="btn btn-primary">Book Appointment</a>
         </div>
-        <div class="nav-hamburger" onclick="toggleMenu(this)">
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleDrawer()">
           <span></span><span></span><span></span>
-        </div>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile nav drawer -->
+  <div id="mobile-drawer" role="dialog" aria-label="Navigation menu">
+    <div class="drawer-panel">
+      <a href="#services"     onclick="closeDrawer()">Services</a>
+      <a href="#technology"   onclick="closeDrawer()">Technology</a>
+      <a href="#locations"    onclick="closeDrawer()">Locations</a>
+      <a href="#about"        onclick="closeDrawer()">About</a>
+      <a href="#testimonials" onclick="closeDrawer()">Reviews</a>
+      <a href="#cta" class="drawer-book" onclick="closeDrawer()">Book Appointment</a>
+    </div>
+    <div class="drawer-overlay" onclick="closeDrawer()"></div>
+  </div>
+
+  <!-- Mobile sticky booking bar -->
+  <div id="mobile-book-bar">
+    <a href="#cta" class="btn btn-primary" style="font-size:.9rem;padding:13px 20px;">Book Appointment</a>
+    <a href="tel:0883574988" class="mbb-call">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call
+    </a>
+  </div>
 
   <!-- ══════════════════════════════ HERO ═══════════════════════════════ -->
   <section id="hero">
@@ -1030,32 +1157,57 @@
 
   <!-- ══════════════════════════════ JS ═════════════════════════════════ -->
   <script>
-    // Sticky nav style on scroll
+    // Sticky nav
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
     // Scroll-triggered fade-up animations
-    const fadeEls = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    fadeEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Mobile menu toggle (simple show/hide)
-    function toggleMenu(btn) {
-      const links = document.querySelector('.nav-links');
-      const cta   = document.querySelector('.nav-cta');
-      const open  = links.style.display === 'flex';
-      if (open) {
-        links.style.display = '';
-        cta.style.display   = '';
-      } else {
-        links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:white;padding:16px 24px 24px;gap:4px;box-shadow:0 8px 32px rgba(0,0,0,.12);z-index:99';
-        cta.style.cssText   = 'display:flex;padding:0 24px 16px;position:fixed;top:auto;left:0;right:0;background:white;z-index:99';
-        document.querySelectorAll('.nav-links a').forEach(a => { a.style.cssText = 'color:#111827;padding:12px 16px;border-radius:8px;font-size:1rem'; });
-      }
+    // Mobile drawer
+    const drawer     = document.getElementById('mobile-drawer');
+    const hamburger  = document.getElementById('hamburger');
+    const bars       = hamburger.querySelectorAll('span');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      // Animate hamburger → ✕
+      bars[0].style.cssText = 'transform:translateY(7px) rotate(45deg)';
+      bars[1].style.cssText = 'opacity:0';
+      bars[2].style.cssText = 'transform:translateY(-7px) rotate(-45deg)';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      bars[0].style.cssText = '';
+      bars[1].style.cssText = '';
+      bars[2].style.cssText = '';
+    }
+
+    function toggleDrawer() {
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    }
+
+    // Close drawer on Escape
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    // Hide mobile sticky bar when near footer
+    const bookBar = document.getElementById('mobile-book-bar');
+    const footer  = document.getElementById('footer');
+    if (bookBar && footer) {
+      const io = new IntersectionObserver(([entry]) => {
+        bookBar.style.display = entry.isIntersecting ? 'none' : '';
+      }, { threshold: 0.01 });
+      io.observe(footer);
     }
   </script>
 
